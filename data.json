@@ -1,0 +1,212 @@
+[
+    {
+        "step_id": "custom_margins_20260723_102829_step_001",
+        "origin_process_id": "custom_margins_20260723_102829",
+        "app_name": "MS Word",
+        "step_name": "msword_layout_margins",
+        "step_description": "Click on the Margins drop-down menu in the Layout ribbon tab to expand page margin presets and custom options.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 57,
+            "absolute_y": 406
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 2.97,
+            "y_distance_from_top_pct": 33.83,
+            "x_distance_from_right_pct": 97.03,
+            "y_distance_from_bottom_pct": 66.17
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/custom_margins_20260723_102829_step_001_full.png",
+            "crop_element": "database/steps_repository/images/custom_margins_20260723_102829_step_001_crop.png",
+            "crop_bounding_box": [
+                0,
+                331,
+                132,
+                481
+            ]
+        },
+        "timestamp": "2026-07-23T10:28:31.772965"
+    },
+    {
+        "step_id": "font_size_20260728_001_step_001",
+        "origin_process_id": "font_size_20260728_001",
+        "app_name": "MS Word",
+        "step_name": "msword_font_size_dropdown",
+        "step_description": "Click the Font Size drop-down menu in the Home ribbon.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 492,
+            "absolute_y": 86
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 25.63,
+            "y_distance_from_top_pct": 6.91,
+            "x_distance_from_right_pct": 74.37,
+            "y_distance_from_bottom_pct": 93.09
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/font_size_20260728_001_step_001_full.png",
+            "crop_element": "database/steps_repository/images/font_size_20260728_001_step_001_crop.png",
+            "crop_bounding_box": [
+                465,
+                62,
+                528,
+                110
+            ]
+        },
+        "timestamp": "2026-07-28T10:15:42.845219"
+    },
+    {
+        "step_id": "bold_text_20260728_001_step_001",
+        "origin_process_id": "bold_text_20260728_001",
+        "app_name": "MS Word",
+        "step_name": "msword_bold_button",
+        "step_description": "Click the Bold button in the Home ribbon to make the selected text bold.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 305,
+            "absolute_y": 86
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 15.88,
+            "y_distance_from_top_pct": 6.91,
+            "x_distance_from_right_pct": 84.12,
+            "y_distance_from_bottom_pct": 93.09
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/bold_text_20260728_001_step_001_full.png",
+            "crop_element": "database/steps_repository/images/bold_text_20260728_001_step_001_crop.png",
+            "crop_bounding_box": [
+                280,
+                61,
+                330,
+                109
+            ]
+        },
+        "timestamp": "2026-07-28T10:18:25.221548"
+    },
+    {
+        "step_id": "insert_picture_20260728_001_step_001",
+        "origin_process_id": "insert_picture_20260728_001",
+        "app_name": "MS Word",
+        "step_name": "msword_insert_picture",
+        "step_description": "Click the Pictures button in the Insert ribbon to insert an image into the document.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 628,
+            "absolute_y": 87
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 32.71,
+            "y_distance_from_top_pct": 7.03,
+            "x_distance_from_right_pct": 67.29,
+            "y_distance_from_bottom_pct": 92.97
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/insert_picture_20260728_001_step_001_full.png",
+            "crop_element": "database/steps_repository/images/insert_picture_20260728_001_step_001_crop.png",
+            "crop_bounding_box": [
+                595,
+                60,
+                670,
+                115
+            ]
+        },
+        "timestamp": "2026-07-28T10:22:15.524198"
+    },
+    {
+        "step_id": "save_document_20260728_001_step_001",
+        "origin_process_id": "save_document_20260728_001",
+        "app_name": "MS Word",
+        "step_name": "msword_save_document",
+        "step_description": "Click the Save button on the Quick Access Toolbar to save the current document.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 28,
+            "absolute_y": 22
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 1.46,
+            "y_distance_from_top_pct": 1.81,
+            "x_distance_from_right_pct": 98.54,
+            "y_distance_from_bottom_pct": 98.19
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/save_document_20260728_001_step_001_full.png",
+            "crop_element": "database/steps_repository/images/save_document_20260728_001_step_001_crop.png",
+            "crop_bounding_box": [
+                0,
+                0,
+                60,
+                52
+            ]
+        },
+        "timestamp": "2026-07-28T10:24:10.123542"
+    },
+    {
+        "step_id": "page_orientation_20260728_001_step_001",
+        "origin_process_id": "page_orientation_20260728_001",
+        "app_name": "MS Word",
+        "step_name": "msword_page_orientation",
+        "step_description": "Click the Orientation button in the Layout ribbon to change the page orientation.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 460,
+            "absolute_y": 89
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 23.96,
+            "y_distance_from_top_pct": 7.12,
+            "x_distance_from_right_pct": 76.04,
+            "y_distance_from_bottom_pct": 92.88
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/page_orientation_20260728_001_step_001_full.png",
+            "crop_element": "database/steps_repository/images/page_orientation_20260728_001_step_001_crop.png",
+            "crop_bounding_box": [
+                430,
+                60,
+                505,
+                115
+            ]
+        },
+        "timestamp": "2026-07-28T10:27:31.874521"
+    },
+    {
+        "step_id": "insert_table_20260728_001_step_001",
+        "origin_process_id": "insert_table_20260728_001",
+        "app_name": "MS Word",
+        "step_name": "msword_insert_table",
+        "step_description": "Click the Table button in the Insert ribbon to insert a table into the document.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 242,
+            "absolute_y": 87
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 12.6,
+            "y_distance_from_top_pct": 7.03,
+            "x_distance_from_right_pct": 87.4,
+            "y_distance_from_bottom_pct": 92.97
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/insert_table_20260728_001_step_001_full.png",
+            "crop_element": "database/steps_repository/images/insert_table_20260728_001_step_001_crop.png",
+            "crop_bounding_box": [
+                205,
+                60,
+                280,
+                115
+            ]
+        },
+        "timestamp": "2026-07-28T10:30:16.647854"
+    }
+]

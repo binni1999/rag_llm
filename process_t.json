@@ -1,0 +1,20 @@
+{
+    "process_id": "msword_insert_pagebreak_20260723_114510",
+    "process_name": "msword_insert_pagebreak",
+    "app_name": "MS Word",
+    "user_intent": "add a page break",
+    "description": "Navigates to the Insert ribbon tab and inserts a page break at the current cursor position.",
+    "recorded_at": "20260723_114510",
+    "screen_dimensions": {
+        "width_px": 1920,
+        "height_px": 1200
+    },
+    "total_steps": 2,
+    "is_parameterized": false,
+    "required_parameters": [],
+    "parameter_bindings": {},
+    "process_sequence": [
+        "msword_insert_pagebreak_20260723_114510_step_001",
+        "msword_insert_pagebreak_20260723_114510_step_002"
+    ]
+}
