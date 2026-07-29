@@ -1,0 +1,58 @@
+{
+    "step_id": "custom_margins_20260723_102829_step_001",
+
+    "planning": {
+
+        "title": "Click Margins",
+
+        "goal_tags": [
+            "margin",
+            "page setup",
+            "page layout",
+            "custom margin",
+            "set margin"
+        ],
+
+        "description": "Opens the Margins dropdown from the Layout ribbon.",
+
+        "preconditions": [
+            "Layout ribbon is active"
+        ],
+
+        "postconditions": [
+            "Margins dropdown is opened"
+        ],
+
+        "next_possible_steps": [
+            "click_custom_margin",
+            "select_normal_margin",
+            "select_narrow_margin"
+        ]
+    },
+
+    "execution": {
+
+        "app_name": "MS Word",
+
+        "action_type": "click",
+
+        "button": "Button.left",
+
+        "coordinates": {
+            "absolute_x": 57,
+            "absolute_y": 406
+        },
+
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 2.97,
+            "y_distance_from_top_pct": 33.83
+        },
+
+        "visual_assets": {
+
+            "crop_element": "...",
+
+            "full_screenshot": "..."
+        }
+    }
+}
