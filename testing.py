@@ -47,6 +47,7 @@ class ScreenDimensions(BaseModel):
     )
 
 
+
 class ProcessSchema(BaseModel):
 
     process_id: str = Field(
@@ -99,7 +100,7 @@ class ProcessSchema(BaseModel):
         description="List of parameter names required to execute the automation. Leave empty if no parameters are needed. Example: ['file_path', 'search_text']"
     )
 
-    parameter_bindings: Dict[str, str] = Field(
+    parameter_bindings: Dict[str, Dict] = Field(
         default_factory=dict,
         description="Mapping between parameter names and their assigned values or placeholders. Example: {'file_path': '{input_file}'}"
     )
@@ -108,6 +109,10 @@ class ProcessSchema(BaseModel):
         ...,
         description="Ordered list of step IDs representing the execution sequence of the automation process."
     )
+
+
+
+
 
 llm_structured = llm.with_structured_output(ProcessSchema)
 
@@ -127,105 +132,161 @@ def generate_process_json(user_query):
 
     steps = build_context(user_query)
 
+    
     prompt = f"""
-You are an expert RPA Process Planner responsible for creating executable automation workflows.
+ You are an expert Microsoft Word RPA Process Planner.
 
-You are given:
+Your task is to build a ProcessSchema object from the retrieved automation steps.
 
-1. A user's automation request.
-2. A collection of retrieved step JSONs from a vector database.
+You MUST determine whether the user's request contains runtime parameters and populate the output accordingly.
 
-Your task is to determine which steps are actually required to accomplish the user's request.
-
--------------------------
+==================================================
 USER REQUEST
--------------------------
+==================================================
 
 {user_query}
 
--------------------------
+==================================================
 RETRIEVED STEP JSONS
--------------------------
+==================================================
 
-{steps}
+{json.dumps(steps, indent=2)}
 
--------------------------
-INSTRUCTIONS
--------------------------
+==================================================
+RULES
+==================================================
 
-1. Carefully analyze the user's request.
+STEP SELECTION
 
-2. Review every retrieved step.
+1. Carefully understand the user's request.
 
-3. Select ONLY the steps that directly contribute to completing the requested task.
+2. Select ONLY the retrieved steps required to complete the task.
 
-4. Ignore unrelated or unnecessary steps, even if they appear in the retrieved context.
+3. Ignore unrelated retrieved steps.
 
-5. Preserve the original execution order of the selected steps.
+4. Preserve the original execution order.
 
-6. Do NOT invent new steps.
+5. Never invent a new step.
 
-7. Do NOT modify existing step_ids.
+6. Never modify any step_id.
 
-8. If multiple retrieved steps perform the same action, choose the most appropriate one.
+7. If multiple step groups perform the same action, choose the most relevant one.
 
-9. If the retrieved context does not contain enough information to complete the task, return an empty process with:
-   - total_steps = 0
-   - process_sequence = []
-   - description explaining that the required steps were not found.
+--------------------------------------------------
 
-10. Infer the following fields from the selected steps:
-    - process_name
-    - process_id
-    - user_intent
-    - description
-    - total_steps
-    - process_sequence
+PROCESS METADATA
 
-11. Copy app_name from the selected steps.
+Infer
 
-12. Set is_parameterized to true only if execution requires runtime input.
+- process_name
+- process_id
+- user_intent
+- description
+- total_steps
+- process_sequence
 
-13. Populate required_parameters and parameter_bindings only when applicable.
+Copy
 
-14. Return ONLY a valid object that matches the ProcessSchema.
+- app_name
 
-Do not return explanations, markdown, or any additional text.
+Set screen size to 1920 x 1200.
+
+--------------------------------------------------
+
+PARAMETER DETECTION
+
+Determine whether the user has supplied runtime values.
+
+Examples
+
+"Bold text"
+
+→ no runtime values
+
+"Insert page break"
+
+→ no runtime values
+
+"Change page orientation"
+
+→ no runtime values
+
+"Set font size to 10"
+
+→ runtime value = 10
+
+"Set custom margins to 1"
+
+→ runtime value = 1
+
+"Insert picture from C:\\Images\\cat.png"
+
+→ runtime value = image path
+
+--------------------------------------------------
+
+IF THERE ARE NO RUNTIME VALUES
+
+Return
+
+"is_parameterized": false
+
+"required_parameters": []
+
+"parameter_bindings": {{}}
+
+--------------------------------------------------
+
+IF THERE ARE RUNTIME VALUES
+
+Return
+
+"is_parameterized": true
+
+Populate
+
+required_parameters
+
+using the parameter names from the retrieved step JSON.
+
+Populate
+
+parameter_bindings
+
+using the parameter mapping present inside the retrieved steps.
+
+DO NOT invent parameter names.
+
+DO NOT invent bindings.
+
+Only use the bindings that already exist inside the retrieved JSON.
+
+--------------------------------------------------
+
+FAILURE
+
+If no suitable retrieved steps exist
+
+Return
+
+total_steps = 0
+
+process_sequence = []
+
+description = "Required automation steps were not found."
+
+==================================================
+
+OUTPUT
+
+Return ONLY a valid ProcessSchema object.
+
+Do NOT return markdown.
+
+Do NOT explain anything.
+
+Do NOT output code blocks.
 """
-
-#     prompt = f"""
-# You are an expert RPA Process Generator.
-
-# Below are the retrieved individual automation steps.
-
-# {json.dumps(steps, indent=4)}
-
-# Your task:
-
-# Generate ONE process.
-
-# Rules
-
-# 1. Infer process_name.
-
-# 2. Infer process_id.
-
-# 3. Infer user_intent.
-
-# 4. Infer description.
-
-# 5. total_steps = number of steps.
-
-# 6. process_sequence must contain all step_ids.
-
-# 7. Copy app_name.
-
-# 8. Screen size is 1920x1200.
-
-# 9. If parameters are required, populate them.
-
-# 10. Return ONLY the structured object.
-# """
 
     response = llm_structured.invoke(prompt)
 
@@ -236,6 +297,15 @@ Do not return explanations, markdown, or any additional text.
 if __name__ == "__main__":
 
     query = input("Enter User Query : ")
+
+    intent = intent_llm.invoke(
+        prompt=f"""
+        Extract the automation intent and runtime parameters.
+
+        User:
+        {query}
+        """
+    )
 
     process = generate_process_json(query)
 

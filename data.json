@@ -30,6 +30,126 @@
         "timestamp": "2026-07-23T10:28:31.772965"
     },
     {
+        "step_id": "custom_margins_20260723_102829_step_002",
+        "origin_process_id": "custom_margins_20260723_102829",
+        "app_name": "MS Word",
+        "step_name": "msword_custom_margins",
+        "step_description": "Click the Custom Margins option from the Margins drop-down menu.",
+        "action_type": "click",
+        "button": "Button.left",
+        "coordinates": {
+            "absolute_x": 118,
+            "absolute_y": 672
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 6.15,
+            "y_distance_from_top_pct": 56.00,
+            "x_distance_from_right_pct": 93.85,
+            "y_distance_from_bottom_pct": 44.00
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/custom_margins_20260723_102829_step_002_full.png",
+            "crop_element": "database/steps_repository/images/custom_margins_20260723_102829_step_002_crop.png",
+            "crop_bounding_box": [
+                0,
+                640,
+                212,
+                706
+            ]
+        },
+        "timestamp": "2026-07-23T10:28:33.412812"
+    },
+    {
+        "step_id": "custom_margins_20260723_102829_step_003",
+        "origin_process_id": "custom_margins_20260723_102829",
+        "app_name": "MS Word",
+        "step_name": "msword_top_margin",
+        "step_description": "Type the Top Margin value into the Top margin input field.",
+        "action_type": "type",
+        "text": "<top_margin>",
+        "coordinates": {
+            "absolute_x": 522,
+            "absolute_y": 236
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 27.19,
+            "y_distance_from_top_pct": 19.67,
+            "x_distance_from_right_pct": 72.81,
+            "y_distance_from_bottom_pct": 80.33
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/custom_margins_20260723_102829_step_003_full.png",
+            "crop_element": "database/steps_repository/images/custom_margins_20260723_102829_step_003_crop.png",
+            "crop_bounding_box": [
+                470,
+                210,
+                610,
+                260
+            ]
+        },
+        "timestamp": "2026-07-23T10:28:36.081251"
+    },
+    {
+        "step_id": "custom_margins_20260723_102829_step_004",
+        "origin_process_id": "custom_margins_20260723_102829",
+        "app_name": "MS Word",
+        "step_name": "msword_bottom_margin",
+        "step_description": "Type the Bottom Margin value into the Bottom margin input field.",
+        "action_type": "type",
+        "text": "<bottom_margin>",
+        "coordinates": {
+            "absolute_x": 522,
+            "absolute_y": 270
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 27.19,
+            "y_distance_from_top_pct": 22.50,
+            "x_distance_from_right_pct": 72.81,
+            "y_distance_from_bottom_pct": 77.50
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/custom_margins_20260723_102829_step_004_full.png",
+            "crop_element": "database/steps_repository/images/custom_margins_20260723_102829_step_004_crop.png",
+            "crop_bounding_box": [
+                470,
+                245,
+                610,
+                295
+            ]
+        },
+        "timestamp": "2026-07-23T10:28:38.318654"
+    },
+    {
+        "step_id": "custom_margins_20260723_102829_step_005",
+        "origin_process_id": "custom_margins_20260723_102829",
+        "app_name": "MS Word",
+        "step_name": "msword_left_margin",
+        "step_description": "Type the Left Margin value into the Left margin input field.",
+        "action_type": "type",
+        "text": "<left_margin>",
+        "coordinates": {
+            "absolute_x": 522,
+            "absolute_y": 305
+        },
+        "relative_position_pct": {
+            "x_distance_from_left_pct": 27.19,
+            "y_distance_from_top_pct": 25.42,
+            "x_distance_from_right_pct": 72.81,
+            "y_distance_from_bottom_pct": 74.58
+        },
+        "visual_assets": {
+            "full_screenshot": "database/steps_repository/images/custom_margins_20260723_102829_step_005_full.png",
+            "crop_element": "database/steps_repository/images/custom_margins_20260723_102829_step_005_crop.png",
+            "crop_bounding_box": [
+                470,
+                280,
+                610,
+                330
+            ]
+        },
+        "timestamp": "2026-07-23T10:28:40.522871"
+    },
+    {
         "step_id": "font_size_20260728_001_step_001",
         "origin_process_id": "font_size_20260728_001",
         "app_name": "MS Word",

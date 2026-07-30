@@ -1,0 +1,56 @@
+{
+    "process_id": "msword_page_setup_custom_margins_20260723_102829",
+    "process_name": "msword_page_setup_custom_margins",
+    "app_name": "MS Word",
+    "user_intent": "setting margin to custom sizes",
+    "description": "Navigates to Layout tab, opens Margins dropdown, launches Custom Margins dialog, sets top/bottom/left/right margin inputs, and applies custom page setup.",
+    "recorded_at": "20260723_102829",
+    "screen_dimensions": {
+        "width_px": 1920,
+        "height_px": 1200
+    },
+    "total_steps": 8,
+    "is_parameterized": true,
+    "required_parameters": [
+        "top_margin",
+        "bottom_margin",
+        "left_margin",
+        "right_margin"
+    ],
+    "parameter_bindings": {
+        "msword_page_setup_custom_margins_20260723_102829_step_003": {
+            "parameter_name": "top_margin",
+            "post_keys": [
+                "TAB"
+            ]
+        },
+        "msword_page_setup_custom_margins_20260723_102829_step_004": {
+            "parameter_name": "bottom_margin",
+            "post_keys": [
+                "TAB"
+            ]
+        },
+        "msword_page_setup_custom_margins_20260723_102829_step_005": {
+            "parameter_name": "left_margin",
+            "post_keys": [
+                "TAB"
+            ]
+        },
+        "msword_page_setup_custom_margins_20260723_102829_step_006": {
+            "parameter_name": "right_margin",
+            "post_keys": [
+                "ENTER"
+            ]
+        }
+    },
+    "process_sequence": [
+        "msword_page_setup_custom_margins_20260723_102829_step_001",
+        "msword_page_setup_custom_margins_20260723_102829_step_002",
+        "msword_page_setup_custom_margins_20260723_102829_step_003",
+        "msword_page_setup_custom_margins_20260723_102829_step_004",
+        "msword_page_setup_custom_margins_20260723_102829_step_005",
+        "msword_page_setup_custom_margins_20260723_102829_step_006",
+        "msword_page_setup_custom_margins_20260723_102829_step_007",
+        "msword_page_setup_custom_margins_20260723_102829_step_008"
+    ]
+}

@@ -1,6 +1,41 @@
 from typing import List, Dict
 from pydantic import BaseModel, Field
 
+import json
+
+prompt = f"""
+You are an expert RPA Process Generator.
+
+Below are the retrieved individual automation steps.
+
+{json.dumps(steps, indent=4)}
+
+Your task:
+
+Generate ONE process.
+
+Rules
+
+1. Infer process_name.
+
+2. Infer process_id.
+
+3. Infer user_intent.
+
+4. Infer description.
+
+5. total_steps = number of steps.
+
+6. process_sequence must contain all step_ids.
+
+7. Copy app_name.
+
+8. Screen size is 1920x1200.
+
+9. If parameters are required, populate them.
+
+10. Return ONLY the structured object.
+"""
 
 class ScreenDimensions(BaseModel):
     width_px: int = Field(
